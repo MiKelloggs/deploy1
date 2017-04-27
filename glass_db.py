@@ -28,17 +28,17 @@ class GlassDB:
 		return self.cursor.fetchall()
 		
 	def createGlass(self, messages):
-		self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
+		self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(%s, %s, %s, %s, %s, %s, %s, %s)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
 		self.connection.commit()
 		return
 	
 	def modifyGlass(self, messages):
-		self.cursor.execute("DELETE FROM glassdb WHERE partnumber = ?",  (messages[4],))
-		self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
+		self.cursor.execute("DELETE FROM glassdb WHERE partnumber = %s",  (messages[4],))
+		self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(%s, %s, %s, %s, %s, %s, %s, %s)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
 		self.connection.commit()
 		return
 		
 	def deleteGlass(self, data):
-		self.cursor.execute("DELETE FROM glassdb WHERE partnumber = ?",  (data,))
+		self.cursor.execute("DELETE FROM glassdb WHERE partnumber = %s",  (data,))
 		self.connection.commit()
 		return
