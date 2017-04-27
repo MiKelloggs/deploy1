@@ -144,7 +144,7 @@ class GlassDB:
         urllib.parse.uses_netloc.append("postgres")
         url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
 
-        self.connection = psycopg2.connect(
+        self.connection=psycopg2.connect(
             cursor_factory=psycopg2.extras.RealDictCursor,
             database=url.path[1:],
             user=url.username,
@@ -152,7 +152,7 @@ class GlassDB:
             host=url.hostname,
             port=url.port
         )
-		self.cursor = self.connection.cursor()
+		self.cursor=self.connection.cursor()
     def __del__(self):
         self.connection.close()
         return
