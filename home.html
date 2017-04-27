@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link href="http://skyrconline.com/wp-content/themes/skyrc/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<!-- All in One SEO Pack 2.3.11.1 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="description"  content="We stock many makes from Arrma, Axial, Kyosho, Redcat, Traxxas, and and much more. With many parts in stock and a track out back, we have just what you need." />
+
+<link rel="canonical" href="http://skyrconline.com/" />
+<div class="container nopadmar">
+<div class="row botpad">
+<div class="col12x">
+
+
+        <div  class="wrapper container">
+           <div class="row">
+           <div class="col12x">
+            <h1 class="header center">Current glass stock for A Plus Quality Glass, St. George, Utah, </h1>
+            <span class="text">You can view current stock, add or remove glass, or make changes.<br></span><br>
+            
+            <div class="col6x">
+            <button id="getButton">View Current Stock</button><br>
+            
+            <ul id="list">
+            </ul>
+            
+            
+            </div>
+            
+            
+            <div class="col6x">
+            <div class="center"><button id="searchButton">Search by Part Number</button>
+            <input type="textarea" width= "75%" height="100px" id="partNumSearchText">
+            
+            
+            <div class="center"><button id="deleteButton">Delete by Part Number</button>
+            <input type="textarea" width= "75%" height="100px" id="partNumDeleteText">
+            
+            <div class="center"><button id="updateButton">Update by Part Number</button>
+            <input type="textarea" width= "75%" height="100px" id="partNumUpdateText">
+            
+            <h3>Modify Current Stock</h3>
+            
+            
+            <br>Starting Year:
+            <input type="textarea" width= "75%" height="100px" id="mdYearStart" value="">
+            <br>Ending Year:
+            <input type="textarea" width= "75%" height="100px" id="mdYearEnd" value="">
+            <br>Make:
+            <input type="textarea" width= "75%" height="100px" id="mdMake" value="">
+            <br>Model:
+            <input type="textarea" width= "75%" height="100px" id="mdModel" value="">
+            <br>Part Number:
+            <input type="textarea" width= "75%" height="100px" id="mdPartNumber" value="">
+            <br>Special Notes:
+            <input type="textarea" width= "75%" height="100px" id="mdLocation" value="">
+            <br>Cost of glass:
+            <input type="textarea" width= "75%" height="100px" id="mdCost" value="">
+            <br>Quantity of stock:
+            <input type="textarea" width= "75%" height="100px" id="mdStock" value="">
+            <br><div class="center"><button id="modifyButton">Submit Ammendments</button>
+            
+            
+            <h3>Create a new entry</h3>
+            
+            
+            <br>Starting Year:
+            <input type="textarea" width= "75%" height="100px" id="crYearStart">
+            <br>Ending Year:
+            <input type="textarea" width= "75%" height="100px" id="crYearEnd">
+            <br>Make:
+            <input type="textarea" width= "75%" height="100px" id="crMake">
+            <br>Model:
+            <input type="textarea" width= "75%" height="100px" id="crModel">
+            <br>Part Number:
+            <input type="textarea" width= "75%" height="100px" id="crPartNumber">
+            <br>Special Notes:
+            <input type="textarea" width= "75%" height="100px" id="crLocation">
+            <br>Cost of glass:
+            <input type="textarea" width= "75%" height="100px" id="crCost">
+            <br>Quantity of stock:
+            <input type="textarea" width= "75%" height="100px" id="crStock">
+            <br><div class="center"><button id="createButton">Submit New Entry</button>
+            <br>
+            
+            
+            
+            
+            </div>
+			</div>
+            </div>
+			<div class="col12x">
+            
+            	<div id="right wrap"></div>
+			   </div>
+            </div>
+            <script src="myscript.js"></script>
+        </div>
+
+
+
+
+
+          
+</body>
+</html>
