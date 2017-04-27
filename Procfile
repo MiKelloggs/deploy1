@@ -1,1 +1,1 @@
-web: python hellodb.py $PORT
+web: python server.py $PORT
