@@ -4,13 +4,9 @@ from urllib.parse import urlparse, parse_qs
 import sys
 from glass_db import GlassDB
 
-
 fw = open('database.txt', 'w')
 fw.write("testing 123")
 fw.close()
-
-
-
 
 class httpServerRequsetHandler(BaseHTTPRequestHandler):
 
@@ -22,7 +18,6 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
                 json_string = json.dumps(rows)
 
                 print("JSON:", json_string)
-
 
                 print(json.dumps(rows))
 
@@ -61,7 +56,6 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
                     db = GlassDB()
                     db.deleteGlass(message)
 
-
                     self.send_response(200)
                     self.send_header("Access-Control-Allow-Origin", "*")
                     self.send_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, HEAD, OPTIONS")
@@ -88,7 +82,6 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
                     db = GlassDB()
                     create = db.createGlass(messages)
 
-
                     self.send_response(201)
                     self.send_header("Access-Control-Allow-Origin", "*")
                     self.send_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, HEAD, OPTIONS")
@@ -97,7 +90,6 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
                     self.end_headers()
                 else:
                     self.handle404()
-
 
         def do_PUT(self):
                 if self.path == "/windshields":
@@ -114,7 +106,6 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
                     db = GlassDB()
                     create = db.modifyGlass(messages)
 
-
                     self.send_response(201)
                     self.send_header("Access-Control-Allow-Origin", "*")
                     self.send_header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, HEAD, OPTIONS")
@@ -124,16 +115,12 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
                 else:
                     self.handle404()
 
-
         def handle404(self):
             self.send_response(404)
             self.send_header("Access-Control-Allow-Origin", "*")
             self.send_header("Content-type", "text/html")#name of header and value
             self.end_headers()
             self.wfile.write(bytes("<strong>Not Found</strong>", "utf-8")) #dont write just a string, http doesnt understand ordinary strings.
-
-
-
 		
 def main():
 	db = GlassDB()
