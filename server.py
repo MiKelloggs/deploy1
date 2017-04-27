@@ -179,8 +179,8 @@ class GlassDB:
 		return
 		
 def main():
-	db = SquirrelDB()
-	db.createSquirrelsTable()
+	db = GlassDB()
+	db.createGlassTable()
 	db = None # disconnect
 	
 	port = 8080
