@@ -155,8 +155,8 @@ class GlassDB:
 		self.cursor = self.connection.cursor()
 		
 	def __del__(self):
-        self.connection.close()
-        return
+		self.connection.close()
+		return
 
     def getGlass(self):
         self.cursor.execute("SELECT * FROM glassdb")
