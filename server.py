@@ -5,7 +5,7 @@ from urllib.parse import urlparse, parse_qs
 import os
 import psycopg2
 import psycopg2.extras
-import urlib.parse
+import urllib.parse
 import sys
 
 
