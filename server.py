@@ -193,7 +193,5 @@ def main():
 	print("Server listening on", "{}:{}".format(*listen))
 	server.serve_forever()
 	
-run()
-
 if __name__ == "__main__":
-	ain()
+	main()
