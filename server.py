@@ -141,19 +141,20 @@ class httpServerRequsetHandler(BaseHTTPRequestHandler):
 class GlassDB:
 
     def __init__(self):
-        urllib.parse.uses_netloc.append("postgres")
-        url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
+		urllib.parse.uses_netloc.append("postgres")
+		url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
 
-        self.connection=psycopg2.connect(
-            cursor_factory=psycopg2.extras.RealDictCursor,
-            database=url.path[1:],
-            user=url.username,
-            password=url.password,
-            host=url.hostname,
-            port=url.port
+		self.connection=psycopg2.connect(
+		cursor_factory=psycopg2.extras.RealDictCursor,
+		database=url.path[1:],
+		user=url.username,
+		password=url.password,
+		host=url.hostname,
+		port=url.port
         )
 		self.cursor=self.connection.cursor()
-    def __del__(self):
+		
+	def __del__(self):
         self.connection.close()
         return
 
