@@ -133,5 +133,5 @@ def main():
 	print("Server listening on", "{}:{}".format(*listen))
 	server.serve_forever()
 	
-if __name__ == "__main__":
-	main()
+
+main()
