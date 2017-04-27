@@ -4,10 +4,6 @@ from urllib.parse import urlparse, parse_qs
 import sys
 from glass_db import GlassDB
 
-fw = open('database.txt', 'w')
-fw.write("testing 123")
-fw.close()
-
 class httpServerRequsetHandler(BaseHTTPRequestHandler):
 
         def do_GET(self):
