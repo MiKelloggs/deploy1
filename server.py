@@ -157,44 +157,43 @@ class GlassDB:
 	def __del__(self):
 		self.connection.close()
 		return
-
-    def getGlass(self):
-        self.cursor.execute("SELECT * FROM glassdb")
-        return self.cursor.fetchall()
-
-    def createGlass(self, messages):
-        self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
-        self.connection.commit()
-        return
-
-    def modifyGlass(self, messages):
-        self.cursor.execute("DELETE FROM glassdb WHERE partnumber = ?",  (messages[4],))
-        self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
-        self.connection.commit()
-        return
-
-    def deleteGlass(self, data):
-        self.cursor.execute("DELETE FROM glassdb WHERE partnumber = ?",  (data,))
-        self.connection.commit()
-        return
-
+		
+	def getGlass(self):
+		self.cursor.execute("SELECT * FROM glassdb")
+		return self.cursor.fetchall()
+		
+	def createGlass(self, messages):
+		self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
+		self.connection.commit()
+		return
+	
+	def modifyGlass(self, messages):
+		self.cursor.execute("DELETE FROM glassdb WHERE partnumber = ?",  (messages[4],))
+		self.cursor.execute("INSERT INTO glassdb (yearstart, yearend, make, model, partnumber, location, cost, stock) VALUES(?, ?, ?, ?, ?, ?, ?, ?)", (messages[0], messages[1], messages[2], messages[3], messages[4], messages[5], messages[6], messages[7]))
+		self.connection.commit()
+		return
+		
+	def deleteGlass(self, data):
+		self.cursor.execute("DELETE FROM glassdb WHERE partnumber = ?",  (data,))
+		self.connection.commit()
+		return
+		
 def main():
-    db = SquirrelDB()
-    db.createSquirrelsTable()
-    db = None # disconnect
-
-    port = 8080
-    if len(sys.argv) > 1:
-        port = int(sys.argv[1])
-
-    listen = ("0.0.0.0", port)
-    server = HTTPServer(listen, httpServerRequsetHandler)
-
-    print("Server listening on", "{}:{}".format(*listen))
-    server.serve_forever()
-
+	db = SquirrelDB()
+	db.createSquirrelsTable()
+	db = None # disconnect
+	
+	port = 8080
+	if len(sys.argv) > 1:
+		port = int(sys.argv[1])
+	
+	listen = ("0.0.0.0", port)
+	server = HTTPServer(listen, httpServerRequsetHandler)
+		
+	print("Server listening on", "{}:{}".format(*listen))
+	server.serve_forever()
+	
 run()
 
-
 if __name__ == "__main__":
-    main()
+	ain()
