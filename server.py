@@ -10,7 +10,7 @@ class GlassDB:
         url = urllib.parse.urlparse(os.environ["http://mkorologos.com/3200/Deploy/glass.db"])
 
 
-        self.connection = psycopg2.connect("http://mkorologos.com/3200/Deploy/glass.db")
+        self.connection = psycopg2.connect("DATABASE_URL")
         self.connection.row_factory = dict_factory
         self.cursor = self.connection.cursor()
         return
